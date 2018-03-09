@@ -11,15 +11,17 @@ import java.util.ArrayList;
 
 public class Reader {
 		
-    //code for extracting data from csv files as strings for dataTableView from: http://stackoverflow.com/questions/27324187/java-reading-from-csv-file-and-storing-its-information-into-arraylistclass     	
+        //code for extracting data from csv files as strings for dataTableView from: http://stackoverflow.com/questions/27324187/java-reading-from-csv-file-and-storing-its-information-into-arraylistclass     	
   	public ArrayList<StockData> getStockData(String csvName) throws IOException{
-  		ArrayList<StockData> data = new ArrayList<StockData>();  
-  		String csvFile = "DataFiles/" + csvName + ".csv";
+		
+  	  ArrayList<StockData> data = new ArrayList<StockData>();  
+  	  String csvFile = "DataFiles/" + csvName + ".csv";
+		
           BufferedReader reader = new BufferedReader(new FileReader(csvFile));
           try {
-          	//skip first line from: http://stackoverflow.com/questions/23236000/bufferedreader-to-skip-first-line
-          	reader.readLine();
-          	String line;
+              //skip first line from: http://stackoverflow.com/questions/23236000/bufferedreader-to-skip-first-line
+              reader.readLine();
+              String line;
               while ((line = reader.readLine()) != null) {
                   //removes comma separator
                   String[] entries = line.split(",");
