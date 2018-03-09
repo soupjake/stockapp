@@ -13,7 +13,7 @@ import javafx.beans.property.StringProperty;
 
 public class StockData {
 	
-	private final StringProperty date;
+    private final StringProperty date;
     private final DoubleProperty open;
     private final DoubleProperty high;
     private final DoubleProperty low;
@@ -82,7 +82,6 @@ public class StockData {
         this.volume.set(volume);
     }
 
-    
     public double getAdjClose() {
         return adjClose.get();
     }
